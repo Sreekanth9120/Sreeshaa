@@ -1,0 +1,71 @@
+.center-indent {
+    text-indent: 40%; /* Pushes the first line to the center */
+    text-align: justify; /* Keeps the rest of the paragraph aligned */
+  }
+
+.center-div{
+    margin: 0 auto;
+    width: 80%;
+    padding: 10px;
+    border: 3px solid #73AD21;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black; /* Outer table border */
+  }
+  
+  th, td {
+    border: 1px solid gray;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+    border-bottom: 2px solid black;
+  }
+  
+  td {
+    border-radius: 5px;
+  }
+
+  .btnStartPrep{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin: 20px;
+    color: #000;
+  }
+
+  .blink-button {
+    animation: blink 1s infinite;
+  }
+
+  .red-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .disabled-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: gray;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }

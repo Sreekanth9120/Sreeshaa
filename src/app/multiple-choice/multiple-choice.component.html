@@ -1,0 +1,39 @@
+<div class="multiple-choice center-div" >
+    <h2 style="color: blue;">Multiple Choice Questions : <span style="color: red;"> Exam {{ examNo }}</span> </h2>
+    <div>
+      <span *ngIf="!submitted" style="color: red; font-weight: bold; border: 1px solid black; padding: 5px;">Time left: {{ minutes }}:{{ seconds }}</span>
+    </div>
+    <div style="max-height: 420px; overflow-y: auto;">
+    <div style="text-align: left;" *ngFor="let question of questions; let i = index" [ngStyle]="{'background-color': i % 2 === 0 ? 'rgb(246 248 248)' : '#ffffff'}">
+      <h3>Q{{ i + 1 }}. {{ question.questionText }}</h3>
+      <div *ngFor="let option of question.options">
+        <label>
+          <input type="radio" name="question{{ question.id }}" [value]="option" (change)="selectAnswer(question.id, option)">
+          {{ option }} <span *ngIf="submitted && question.correct == true && question.correctAnswer == option">✔️</span>
+        </label>
+      </div>
+      <span style="color:green" *ngIf="submitted && question.correct == true">It's correct </span>
+      <span style="color: red;" *ngIf="submitted && question.correct == false">It's wrong. Correct answer: {{ question.correctAnswer }}</span>
+    </div>
+    </div>
+    <div *ngIf="!submitted">
+      <button (click)="submitAnswers()" [disabled]="submitted">Submit</button> 
+      <span> {{ selectedAnswersLength }} / {{ questions.length }}  </span>
+    </div>
+    <div style="color: green; text-align: center; font-size: medium; font-weight: bold;" *ngIf="submitted">
+      Your Score: {{ score }} / {{ questions.length }}
+    </div>
+  </div>
+  <br>
+  <div style="text-align: center;" *ngIf="!hasFullAccess && submitted">
+    <span  class= "blink-button" style="color: red;">To Get the Full Access, please text <span style="color: blue;">FullAccess</span> & WhatsApp to <span style="color: blue;">9177833262</span> for the key</span>
+    <br>
+    <label for="userInput">Enter the key for full access :</label>
+    <input type="text" id="userInput" [(ngModel)]="userInputKey">
+    <button style="margin: 10px;" (click)="btnGetFullAccessClick()"> Submit Key</button>
+  </div>
+  <div class="right-div">
+    <button style="margin: 10px;" *ngIf="examNo > 1 && submitted" (click)="PreviousExam()">Prev: Exam {{ examNo - 1 }}</button>
+    <button style="margin: 10px;" (click)="NextExam()" *ngIf="submitted && examNo < 10 && hasFullAccess">Next: Exam {{ examNo + 1 }}</button>
+  </div>
+  

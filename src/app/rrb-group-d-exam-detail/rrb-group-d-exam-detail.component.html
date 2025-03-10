@@ -1,0 +1,40 @@
+<h1 style="text-align: center; color: blue; " >RRB Group D 2025</h1>
+<div class="center-div">
+    <p class="center-indent">The Railway Recruitment Board (RRB) is accepting applications
+     from 10th-pass candidates for 32438 Group D (Level 1) vacancies. 
+     The RRB Group D Apply Online 2025 link is now available on the official 
+     website https://www.rrbapply.gov.in/. </p>
+     <div class="">
+        <table>
+            <tr>
+                <th>Particulars</th>
+                <th>Details</th>
+                
+            </tr>
+            <tr *ngFor="let particular of particularsList">
+                <td>{{ particular.name }}</td>
+                <td>{{ particular.details }}</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <div>
+        <label for="userInput">Enter the key for full access :</label>
+        <input type="text" id="userInput" [(ngModel)]="rrbUserKey">
+    </div>
+    <br>
+    <button class="btnStartPrep red-button" (click)="btnStartPrepClick()"> Start Mock Exams</button>
+    
+    <button class="btnStartPrep disabled-button" disabled title="Please Get the Full access to download"> Study Materials</button>
+    <br>
+    <span class="blink-button" style="color: blue; animation: blinker 1s linear infinite;">1st Mock Exam is Free. To get the FullAccess, please text <span style="color: red;">FullAccess</span> & WhatsApp to <span style="color: red;">9177833262</span> for the key</span>
+
+    <style>
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
+    }
+    </style>
+</div>
+
