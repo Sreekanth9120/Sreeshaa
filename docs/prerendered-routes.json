@@ -1,0 +1,10 @@
+{
+  "routes": {
+    "/sreesha": {},
+    "/sreesha/bestproducts": {},
+    "/sreesha/examList": {},
+    "/sreesha/rrbExam": {},
+    "/sreesha/rrbGroupD": {},
+    "/sreesha/techlearn": {}
+  }
+}
